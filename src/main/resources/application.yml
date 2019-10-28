@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  application:
+    name: MQ-application
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT%2B8
+    # 必须是username和password，否则连不上
+    username: root
+    password: yaoyao0203
+  # rabbitmq配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
