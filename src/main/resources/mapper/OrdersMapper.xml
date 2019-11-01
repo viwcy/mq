@@ -5,10 +5,13 @@
     <select id="findAll" resultType="com.fuqiang.mq.delay.model.Orders">
         select * from orders where cancel = 0 and id=01
     </select>
-    <delete id="updateOrder" parameterType="string">
+    <update id="updateOrder" parameterType="string">
         update orders set cancel = 1 where id = #{id}
-    </delete>
+    </update>
     <delete id="insertOrder" parameterType="com.fuqiang.mq.delay.model.Orders">
         insert orders(id,user,goods,price,status,cancel) values (#{id},#{user},#{goods},#{price},#{status},#{cancel})
     </delete>
+    <select id="findById" parameterType="string" resultType="com.fuqiang.mq.delay.model.Orders">
+        select * from orders where id = #{id} and cancel = 0
+    </select>
 </mapper>

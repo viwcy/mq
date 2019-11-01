@@ -24,4 +24,6 @@ public interface OrdersMapper {
     void insertOrder(Orders order);
 
     void updateOrder(String id);
+
+    Orders findById(String id);
 }

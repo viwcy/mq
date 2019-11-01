@@ -19,3 +19,18 @@ spring:
     password: guest
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.198.98:12000/eureka/
+  instance:
+    # 服务心跳的调用间隔，默认30s
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+feign:
+  hystrix:
+    enabled: true
